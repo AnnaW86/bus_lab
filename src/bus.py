@@ -22,6 +22,10 @@ class Bus:
     
     def pick_up_from_stop(self, bus_stop):
         for person in bus_stop.queue:
-            self.pick_up(person)
+            if person.required_route == 22:
+                self.pick_up(person)
+        for passenger in self.passengers:
+            bus_stop.remove_from_queue(passenger)
+ 
             
     

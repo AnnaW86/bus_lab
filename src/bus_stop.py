@@ -11,3 +11,7 @@ class BusStop:
     
     def clear(self):
         self.queue = []
+    
+    def remove_from_queue(self, person):
+        if person in self.queue:
+            self.queue.remove(person)
