@@ -52,7 +52,6 @@ class TestBus(unittest.TestCase):
         bus_stop.add_to_queue(person_1)
         bus_stop.add_to_queue(person_2)
         bus_stop.add_to_queue(person_3)
-        starting_queue_length = len(bus_stop.queue)
         self.bus.pick_up_from_stop(bus_stop)
         self.assertEqual(2, self.bus.passenger_count())
-        self.assertEqual(starting_queue_length - 2, bus_stop.queue_length())
+        self.assertEqual(1, bus_stop.queue_length())
