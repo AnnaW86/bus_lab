@@ -9,4 +9,19 @@ class Bus:
     
     def passenger_count(self):
         return len(self.passengers)
+
+    def pick_up(self, person):
+        self.passengers.append(person)
+    
+    def drop_off(self, person):
+        if person in self.passengers:
+            self.passengers.remove(person)
+    
+    def empty(self):
+        self.passengers = []
+    
+    def pick_up_from_stop(self, bus_stop):
+        for person in bus_stop.queue:
+            self.pick_up(person)
+            
     
